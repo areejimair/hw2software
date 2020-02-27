@@ -1,0 +1,8 @@
+<project>
+	<property name ="srccode" location="./src/hw2software"/>
+	<property name="classcode" location="./target"/>
+	<target name="compile">
+		<mkdir dir="${classcode}"/>
+		<javac srcdir="${srccode}" destdir="${classcode}"/>
+		</target>
+</project>
