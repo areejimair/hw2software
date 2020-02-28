@@ -1,8 +1,8 @@
 <project >
 
-<property location="./src/hw2software/srccode" name="src.java.dir"/>
+<property location="./src/hw2software/srccode/sum" name="src.java.dir"/>
 
-<property location="./src/testingcalss/testclasssum" name="src.test.dir"/>
+<property location="./src/testingcalss/testclasssum/test" name="src.test.dir"/>
 
 <property location="./target" name="result.dir"/>
 
