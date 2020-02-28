@@ -2,7 +2,7 @@
 
 <property location="./src/hw2software" name="src.java.dir"/>
 
-<property location="./src/testingcalss" name="src.test.dir"/>
+<property location="./src/testingclass" name="src.test.dir"/>
 
 <property location="./target" name="result.dir"/>
 
@@ -27,11 +27,8 @@
 
 
 <target name="compile">
-
 <mkdir dir="${result.javaclasses.dir}"/>
-
-<javac includeantruntime="false" debug="true" destdir="${result.javaclasses.dir}" srcdir="${src.java.dir}"> </javac>
-
+<javac  srcdir="${src.java.dir}" destdir="${result.javaclasses.dir}"  includeantruntime="false" debug="true" />
 </target>
 
 
@@ -43,15 +40,14 @@
 <javac includeantruntime="false" debug="true" destdir="${result.testclasses.dir}" srcdir="${src.test.dir}">
 
 
--<classpath>
+<classpath>
 
 <path refid="NecessaryLibraries"/>
 
 <pathelement location="${result.javaclasses.dir}"/>
 
 </classpath>
-
-</javac>
+	</javac>
 
 </target>
 
@@ -60,10 +56,7 @@
 
 <!--fork : each test will run in its own JVM (to seperate test cases)-->
 
-
-
 <junit fork="true" haltonfailure="true" printsummary="true">
-
 
 <classpath>
 
@@ -76,14 +69,11 @@
 </classpath>
 
 <formatter usefile="false" type="brief"/>
+<batchtest>
 
+<fileset dir="${result.testclasses.dir}">
 
--<batchtest>
-
-
--<fileset dir="${result.testclasses.dir}">
-
-<include name="**/*Test.class"/>
+<include name="**/*testclasssum.class"/>
 
 </fileset>
 
